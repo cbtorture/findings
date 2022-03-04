@@ -171,6 +171,7 @@ int main()
 <p>Here we document the behaviour of various C compiler implementations on the above code
 and which arguments (further variations) were used and lastly the outcome. You can
 reproduce the below by checking out the <a href="https://github.com/cbtorture/tests/tree/master/functions/f1">F1 tests</a>.</p>
+<h3 id="compiler-tests">Compiler tests</h3>
 <p>Running: <code>program.c</code></p>
 <table>
 <thead>
@@ -2313,7 +2314,67 @@ reproduce the below by checking out the <a href="https://github.com/cbtorture/te
 </tr>
 </tbody>
 </table>
-<p><strong>TODO:</strong> Behaviur of several software verifiers on these too</p>
+<h3 id="verifier-tests">Verifier tests</h3>
+<table>
+<thead>
+<tr>
+<th>Verifier</th>
+<th>Options</th>
+<th>Standard</th>
+<th><code>exit code</code></th>
+<th>Observation</th>
+<th>Expected assertion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cbmc</td>
+<td>[]</td>
+<td></td>
+<td><code>0</code></td>
+<td><code>assert(result == 4);</code></td>
+<td>✅️</td>
+</tr>
+<tr>
+<td>esbmc</td>
+<td>[]</td>
+<td></td>
+<td><code>0</code></td>
+<td><code>assert(result == 4);</code></td>
+<td>✅️</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Verifier</th>
+<th>Options</th>
+<th>Standard</th>
+<th><code>exit code</code></th>
+<th>Observation</th>
+<th>Expected assertion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cbmc</td>
+<td>[]</td>
+<td></td>
+<td><code>10</code></td>
+<td><code>assert(result == 5);</code></td>
+<td>❌️</td>
+</tr>
+<tr>
+<td>esbmc</td>
+<td>[]</td>
+<td></td>
+<td><code>1</code></td>
+<td><code>assert(result == 5);</code></td>
+<td>❌️</td>
+</tr>
+</tbody>
+</table>
 <p><br></p>
 <h2 id="explicit-versions">Explicit versions</h2>
 <p>Unwound versions that can be used for benchmarking. Every compiler and options
