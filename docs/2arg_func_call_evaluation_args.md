@@ -55,6 +55,8 @@ Here we document the behaviour of various C compiler implementations on the abov
 and which arguments (further variations) were used and lastly the outcome. You can
 reproduce the below by checking out the [F1 tests](https://github.com/cbtorture/tests/tree/master/functions/f1).
 
+### Compiler tests
+
 Running: `program.c`
 
 | Compiler | Options| Standard | `result` | Observation |
@@ -364,7 +366,18 @@ Running: `program.c`
 | tcc | -O3 | iso9899:2017 | `4` |left-to-right execution ordering |
 | tcc | -O3 | gnu17 | `4` |left-to-right execution ordering |
 
-**TODO:** Behaviur of several software verifiers on these too
+### Verifier tests
+
+| Verifier | Options| Standard | `exit code` | Observation | Expected assertion|
+|----|----|----|---|---|---|
+| cbmc | [] |  | `0` | `assert(result == 4);` |✅️ |
+| esbmc | [] |  | `0` | `assert(result == 4);` |✅️ |
+
+
+| Verifier | Options| Standard | `exit code` | Observation | Expected assertion|
+|----|----|----|---|---|---|
+| cbmc | [] |  | `10` | `assert(result == 5);` |❌️ |
+| esbmc | [] |  | `1` | `assert(result == 5);` |❌️ |
 
 <br>
 
