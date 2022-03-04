@@ -1,5 +1,6 @@
 <center>
 <img src="the_humbler.jpg">
+<i>Photograph by Simeon Boschoff</i>
 
 # **C**-lang **B**ehaviour **T**able
 #### _Documenting various compiler implementations' of unspecified behaviour in C programs_
