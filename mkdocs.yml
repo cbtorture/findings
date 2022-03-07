@@ -8,4 +8,4 @@ nav:
             - F2: f2_3args.md
     - Lists:
         - Introduction: lists.md
-        - L1: 2arg_func_call.md
+        - L1: l1.md
