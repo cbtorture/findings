@@ -4,7 +4,7 @@ nav:
     - Home: index.md
     - Functions:
         - Simple:
-            - F1: 2arg_func_call_evaluation_args.md
+            - F1: f1.md
             - F2: f2_3args.md
     - Lists:
         - Introduction: lists.md
