@@ -5,7 +5,7 @@ nav:
     - Functions:
         - Simple:
             - F1: f1.md
-            - F2: f2_3args.md
+            - F2: f2.md
     - Lists:
         - Introduction: lists.md
         - L1: l1.md
