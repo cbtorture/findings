@@ -1848,6 +1848,34 @@ int main()
 <td>✅️</td>
 <td><code>23534b6f94531ef4c391b5d9fe172686</code></td>
 </tr>
+<tr>
+<td>CompCert</td>
+<td>['ccomp', '-O0', '-o', 'd9a473bd80a5549832093b25e8416b88']</td>
+<td><code>result[0] == 1 &amp;&amp; result[1] == 2</code></td>
+<td>✅️</td>
+<td><code>d9a473bd80a5549832093b25e8416b88</code></td>
+</tr>
+<tr>
+<td>CompCert</td>
+<td>['ccomp', '-O1', '-o', 'd0ffe543b7cfb1a5a2cbcc2779390d2d']</td>
+<td><code>result[0] == 1 &amp;&amp; result[1] == 2</code></td>
+<td>✅️</td>
+<td><code>d0ffe543b7cfb1a5a2cbcc2779390d2d</code></td>
+</tr>
+<tr>
+<td>CompCert</td>
+<td>['ccomp', '-O2', '-o', 'dec6f2eab7998be0161f7c23b9444638']</td>
+<td><code>result[0] == 1 &amp;&amp; result[1] == 2</code></td>
+<td>✅️</td>
+<td><code>dec6f2eab7998be0161f7c23b9444638</code></td>
+</tr>
+<tr>
+<td>CompCert</td>
+<td>['ccomp', '-O3', '-o', '96c334b1475a6d6ee71834eb57862ae8']</td>
+<td><code>result[0] == 1 &amp;&amp; result[1] == 2</code></td>
+<td>✅️</td>
+<td><code>96c334b1475a6d6ee71834eb57862ae8</code></td>
+</tr>
 </tbody>
 </table>
 <h3 id="program-2-result0-2-result1-1">Program 2 (<code>result[0] == 2 &amp;&amp; result[1] == 1</code>)</h3>
@@ -3502,6 +3530,34 @@ int main()
 <td><code>result[0] == 2 &amp;&amp; result[1] == 1</code></td>
 <td>❌️</td>
 <td><code>23534b6f94531ef4c391b5d9fe172686</code></td>
+</tr>
+<tr>
+<td>CompCert</td>
+<td>['ccomp', '-O0', '-o', 'd9a473bd80a5549832093b25e8416b88']</td>
+<td><code>result[0] == 2 &amp;&amp; result[1] == 1</code></td>
+<td>❌️</td>
+<td><code>d9a473bd80a5549832093b25e8416b88</code></td>
+</tr>
+<tr>
+<td>CompCert</td>
+<td>['ccomp', '-O1', '-o', 'd0ffe543b7cfb1a5a2cbcc2779390d2d']</td>
+<td><code>result[0] == 2 &amp;&amp; result[1] == 1</code></td>
+<td>❌️</td>
+<td><code>d0ffe543b7cfb1a5a2cbcc2779390d2d</code></td>
+</tr>
+<tr>
+<td>CompCert</td>
+<td>['ccomp', '-O2', '-o', 'dec6f2eab7998be0161f7c23b9444638']</td>
+<td><code>result[0] == 2 &amp;&amp; result[1] == 1</code></td>
+<td>❌️</td>
+<td><code>dec6f2eab7998be0161f7c23b9444638</code></td>
+</tr>
+<tr>
+<td>CompCert</td>
+<td>['ccomp', '-O3', '-o', '96c334b1475a6d6ee71834eb57862ae8']</td>
+<td><code>result[0] == 2 &amp;&amp; result[1] == 1</code></td>
+<td>❌️</td>
+<td><code>96c334b1475a6d6ee71834eb57862ae8</code></td>
 </tr>
 </tbody>
 </table>
