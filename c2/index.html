@@ -37,9 +37,13 @@
                                 <a href=".." class="nav-link">Home</a>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Functions <b class="caret"></b></a>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Unspecified <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Functions</a>
+    <ul class="dropdown-menu">
+            
   <li class="dropdown-submenu">
     <a href="#" class="dropdown-item">Simple</a>
     <ul class="dropdown-menu">
@@ -53,44 +57,53 @@
 </li>
     </ul>
   </li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Lists <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
+    </ul>
+  </li>
                                     
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Lists</a>
+    <ul class="dropdown-menu">
+            
 <li>
     <a href="../lists/" class="dropdown-item">Introduction</a>
 </li>
-                                    
+            
 <li>
     <a href="../l1/" class="dropdown-item">L1</a>
 </li>
-                                    
+            
 <li>
     <a href="../l2.md" class="dropdown-item">L2</a>
 </li>
-                                    
+            
 <li>
     <a href="../l3/" class="dropdown-item">L3</a>
 </li>
+    </ul>
+  </li>
                                 </ul>
                             </li>
                             <li class="dropdown active">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Comma-operator <b class="caret"></b></a>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Specified (sanity) <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Comma-operator</a>
+    <ul class="dropdown-menu">
+            
 <li>
     <a href="../comma/" class="dropdown-item">Introduction</a>
 </li>
-                                    
+            
 <li>
     <a href="../c1/" class="dropdown-item">C1</a>
 </li>
-                                    
+            
 <li>
     <a href="./" class="dropdown-item active">C2</a>
 </li>
+    </ul>
+  </li>
                                 </ul>
                             </li>
                         </ul>
@@ -136,6 +149,10 @@
               </ul>
             </li>
             <li class="nav-item" data-level="2"><a href="#results-of-behaviour" class="nav-link">Results of behaviour</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#explicit-versions" class="nav-link">Explicit versions</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -6955,7 +6972,91 @@ int main()
 show), the specification of the comma-operator is infact enforced. The last two tests which seek
 to see the ordering of the comma-operator not enforced, i.e. the first expression in the <em>"tuple"</em>
 appears to be executed last, show that the specification is <strong>indeed</strong> enforced and no compiler
-orders the comman operator differently.</p></div>
+orders the comman operator differently.</p>
+<p><br></p>
+<hr />
+<p><br></p>
+<h2 id="explicit-versions">Explicit versions</h2>
+<p>To improve CSeq per-compiler behaviour we will need explicit versions that provide the given
+behaviour, in this case there will be only two explicit versions.</p>
+<p>Just for the sake of the clarity I added explicit versions for both permutations caused
+by <code>F*</code> behaviour in the function call arguments, but both enforce the correct
+left-to-right execution ordering of the expression evaluation in the comma-operator
+operand expressions.</p>
+<h3 id="comma-operator-ltr-spec-func-args-ltr-unspec_1">comma-operator ltr (spec), func. args. ltr (unspec)</h3>
+<pre><code class="language-c">#include&lt;assert.h&gt;
+
+int map[3] = {0,0,0};
+int x = 0;
+int id = 0;
+
+int f(int x1, int x2)
+{
+    return (x1*2)+x2;
+}
+
+int updateX(int sig)
+{
+    map[id] = sig;
+    id++;
+
+    x++;
+    return x;
+}
+
+int main()
+{
+        int res1 = updateX(1);
+        int res2 = updateX(2);
+        int res3 = updateX(3);
+        int result = (res1, f)(res2, res3);
+
+        /* 1, f(2, 3) with result=f(2,3) */
+        assert(map[0] == 1);
+        assert(map[1] == 2);
+        assert(map[2] == 3);
+        assert(result == 7);        
+
+        return 0;
+}
+</code></pre>
+<h3 id="comma-operator-ltr-spec-func-args-rtl-unspec_1">comma-operator ltr (spec), func. args. rtl (unspec)</h3>
+<pre><code class="language-c">#include&lt;assert.h&gt;
+
+int map[3] = {0,0,0};
+int x = 0;
+int id = 0;
+
+int f(int x1, int x2)
+{
+    return (x1*2)+x2;
+}
+
+int updateX(int sig)
+{
+    map[id] = sig;
+    id++;
+
+    x++;
+    return x;
+}
+
+int main()
+{
+        int res1 = updateX(1);
+        int res2 = updateX(3);
+        int res3 = updateX(2);
+        int result = (res1, f)(res3, res2);
+
+        /* 1, f(3, 2) with result=f(3,2) */
+        assert(map[0] == 1);
+        assert(map[1] == 3);
+        assert(map[2] == 2);
+        assert(result == 7);        
+
+        return 0;
+}
+</code></pre></div>
             </div>
         </div>
 
