@@ -2,16 +2,18 @@ site_name: CBT
 
 nav:
     - Home: index.md
-    - Functions:
-        - Simple:
-            - F1: f1.md
-            - F2: f2.md
-    - Lists:
-        - Introduction: lists.md
-        - L1: l1.md
-        - L2: l2.md
-        - L3: l3.md
-    - Comma-operator:
-        - Introduction: comma.md
-        - C1: c1.md
-        - C2: c2.md
+    - Unspecified:
+        - Functions:
+            - Simple:
+                - F1: f1.md
+                - F2: f2.md
+        - Lists:
+            - Introduction: lists.md
+            - L1: l1.md
+            - L2: l2.md
+            - L3: l3.md
+    - Specified (sanity):
+        - Comma-operator:
+            - Introduction: comma.md
+            - C1: c1.md
+            - C2: c2.md
