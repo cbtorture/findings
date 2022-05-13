@@ -4,26 +4,26 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="None">
         
         
-        <link rel="shortcut icon" href="img/favicon.ico">
-        <title>CBT</title>
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/font-awesome.min.css" rel="stylesheet">
-        <link href="css/base.css" rel="stylesheet">
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>F69 - CBT</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
 
-        <script src="js/jquery-1.10.2.min.js" defer></script>
-        <script src="js/bootstrap.min.js" defer></script>
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap.min.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script> 
     </head>
 
-    <body class="homepage">
+    <body>
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href=".">CBT</a>
+                <a class="navbar-brand" href="..">CBT</a>
                 <!-- Expander button -->
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
                     <span class="navbar-toggler-icon"></span>
@@ -33,8 +33,8 @@
                 <div id="navbar-collapse" class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
-                            <li class="navitem active">
-                                <a href="." class="nav-link">Home</a>
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Home</a>
                             </li>
                             <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Unspecified <b class="caret"></b></a>
@@ -49,11 +49,11 @@
     <ul class="dropdown-menu">
             
 <li>
-    <a href="f1/" class="dropdown-item">F1</a>
+    <a href="../f1/" class="dropdown-item">F1</a>
 </li>
             
 <li>
-    <a href="f2/" class="dropdown-item">F2</a>
+    <a href="../f2/" class="dropdown-item">F2</a>
 </li>
     </ul>
   </li>
@@ -65,19 +65,19 @@
     <ul class="dropdown-menu">
             
 <li>
-    <a href="lists/" class="dropdown-item">Introduction</a>
+    <a href="../lists/" class="dropdown-item">Introduction</a>
 </li>
             
 <li>
-    <a href="l1/" class="dropdown-item">L1</a>
+    <a href="../l1/" class="dropdown-item">L1</a>
 </li>
             
 <li>
-    <a href="l2/" class="dropdown-item">L2</a>
+    <a href="../l2/" class="dropdown-item">L2</a>
 </li>
             
 <li>
-    <a href="l3/" class="dropdown-item">L3</a>
+    <a href="../l3/" class="dropdown-item">L3</a>
 </li>
     </ul>
   </li>
@@ -92,15 +92,15 @@
     <ul class="dropdown-menu">
             
 <li>
-    <a href="comma/" class="dropdown-item">Introduction</a>
+    <a href="../comma/" class="dropdown-item">Introduction</a>
 </li>
             
 <li>
-    <a href="c1/" class="dropdown-item">C1</a>
+    <a href="../c1/" class="dropdown-item">C1</a>
 </li>
             
 <li>
-    <a href="c2/" class="dropdown-item">C2</a>
+    <a href="../c2/" class="dropdown-item">C2</a>
 </li>
     </ul>
   </li>
@@ -114,16 +114,6 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
-                            <li class="nav-item">
-                                <a rel="prev" class="nav-link disabled">
-                                    <i class="fa fa-arrow-left"></i> Previous
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a rel="next" href="f1/" class="nav-link">
-                                    Next <i class="fa fa-arrow-right"></i>
-                                </a>
-                            </li>
                     </ul>
                 </div>
             </div>
@@ -142,9 +132,13 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#c-lang-behaviour-table" class="nav-link">C-lang Behaviour Table</a>
+            <li class="nav-item" data-level="1"><a href="#f69-level-order-test-for-function-evaluation" class="nav-link">F69: Level-order test for function evaluation</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#sections" class="nav-link">Sections</a>
+            <li class="nav-item" data-level="2"><a href="#description" class="nav-link">Description</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#results-of-behaviour" class="nav-link">Results of behaviour</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -155,24 +149,29 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<p><center>
-<img src="the_humbler.jpg">
-<i>Photograph by Simeon Boschoff</i></p>
-<h1 id="c-lang-behaviour-table"><strong>C</strong>-lang <strong>B</strong>ehaviour <strong>T</strong>able</h1>
-<h4 id="documenting-various-compiler-implementations-of-unspecified-behaviour-in-c-programs"><em>Documenting various compiler implementations' of unspecified behaviour in C programs</em></h4>
-<p></center></p>
-<hr />
-<p>This website contains code examples of C code that uses unspecified C language features
-that behave in different ways depending on the compiler used and possibly the flags used
-during compilation as well. </p>
+<h1 id="f69-level-order-test-for-function-evaluation"><strong>F69</strong>: Level-order test for function evaluation</h1>
 <p><br></p>
-<h2 id="sections">Sections</h2>
-<p>There are several main sections that look at parts of the C specification which are unspecified.
-The main sections are listed below from wherein you can find more convoluted examples.</p>
-<ol>
-<li><a href="">Functions</a></li>
-<li><a href="">List initializers</a></li>
-</ol></div>
+<h2 id="description">Description</h2>
+<p>Tests f1 and F2 have demonstrated clearly that strict left-to-right and right-to-left behaviour is adhered to
+in simple cases whereby there are no nested function calls in the expressions that make up the arguments to the
+outer function calls.</p>
+<p>What this test case aims to show is that the ordering is not only strictly left-to-right or right-to-left but
+also that it is for when one does nested calls and that the logic of sequence points applies still. Really
+it just reassures us the logic holds.</p>
+<p>Given a piece of code such as:</p>
+<pre><code class="language-c">
+</code></pre>
+<p>We should have either this output (left-to-right):</p>
+<p>TODO: Add output here</p>
+<p>Or this output (right-to-left):</p>
+<p>TODO: Add output here</p>
+<h2 id="results-of-behaviour">Results of behaviour</h2>
+<p>Here we test several different compilers and software verifiers and several flags and C
+standards per each. We will be testing two versions in this test:</p>
+<h3 id="program-1-todo-cond">Program 1 (<code>TODO: cond</code>)</h3>
+<p>TODO: Add results</p>
+<h3 id="program-2-todo-cond">Program 2 (<code>TODO: cond</code>)</h3>
+<p>TODO: Add results</p></div>
             </div>
         </div>
 
@@ -181,11 +180,11 @@ The main sections are listed below from wherein you can find more convoluted exa
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
-            var base_url = ".",
+            var base_url = "..",
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
-        <script src="js/base.js" defer></script>
-        <script src="search/main.js" defer></script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -250,8 +249,3 @@ The main sections are listed below from wherein you can find more convoluted exa
 
     </body>
 </html>
-
-<!--
-MkDocs version : 1.2.3
-Build Date UTC : 2022-05-13 15:42:27.206264+00:00
--->
