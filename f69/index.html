@@ -158,16 +158,6 @@
             </li>
               </ul>
             </li>
-            
-            <li class="nav-item" data-level="1"><a href="#include" class="nav-link">include</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            
-            <li class="nav-item" data-level="1"><a href="#include_1" class="nav-link">include</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
         </ul>
     </div>
 </div></div>
@@ -189,53 +179,62 @@ assertions that are assrting a certain <strong>SPECIFIC</strong> ordering.</p>
 standards per each. We will be testing two versions in this test:</p>
 <h3 id="program-1-left-to-right-strict">Program 1 (<code>left to right strict</code>)</h3>
 <p>Running program: <code>functions/f69/recursive_lr.c</code></p>
-<p>```c</p>
-<h1 id="include">include<assert.h></h1>
-<p>char order[5] = {0,0,0,0,0};</p>
-<p>int counter = 0;</p>
-<p>int getCount()
+<pre><code class="language-c">#include&lt;assert.h&gt;
+
+char order[5] = {0,0,0,0,0};
+
+int counter = 0;
+
+int getCount()
 {
     counter = counter + 1;
     return counter;
-}</p>
-<p>int func(int x1, int x2)
+}
+
+int func(int x1, int x2)
 {
     order[4] = getCount();
     return 0;
-}</p>
-<p>int gunc(int x1, int x2)
+}
+
+int gunc(int x1, int x2)
 {
     order[2] = getCount();
     return 144;
-}</p>
-<p>int f1()
+}
+
+int f1()
 {
     order[0] = getCount();
     return 4;
-}</p>
-<p>int f2()
+}
+
+int f2()
 {
     order[1] = getCount();
     return 55;
-}</p>
-<p>int f3()
+}
+
+int f3()
 {
     order[3] = getCount();
     return 67;
-}</p>
-<p>int main()
-{
-    func(gunc(f1(), f2()), f3());</p>
-<pre><code>/* Left to right  */
-assert(order[0] == 1);
-assert(order[1] == 2);
-assert(order[2] == 3);
-assert(order[3] == 4);
-assert(order[4] == 5);
+}
 
-return 0;
+int main()
+{
+    func(gunc(f1(), f2()), f3());
+
+    /* Left to right  */
+    assert(order[0] == 1);
+    assert(order[1] == 2);
+    assert(order[2] == 3);
+    assert(order[3] == 4);
+    assert(order[4] == 5);
+
+    return 0;
+}
 </code></pre>
-<p>}```</p>
 <p>Expected assertion: <code>left to right</code></p>
 <table>
 <thead>
@@ -1890,53 +1889,62 @@ return 0;
 </table>
 <h3 id="program-2-right-to-left-strict">Program 2 (<code>right to left strict</code>)</h3>
 <p>Running program: <code>functions/f69/recursive_rl.c</code></p>
-<p>```c</p>
-<h1 id="include_1">include<assert.h></h1>
-<p>char order[5] = {0,0,0,0,0};</p>
-<p>int counter = 0;</p>
-<p>int getCount()
+<pre><code class="language-c">#include&lt;assert.h&gt;
+
+char order[5] = {0,0,0,0,0};
+
+int counter = 0;
+
+int getCount()
 {
     counter = counter + 1;
     return counter;
-}</p>
-<p>int func(int x1, int x2)
+}
+
+int func(int x1, int x2)
 {
     order[4] = getCount();
     return 0;
-}</p>
-<p>int gunc(int x1, int x2)
+}
+
+int gunc(int x1, int x2)
 {
     order[2] = getCount();
     return 144;
-}</p>
-<p>int f1()
+}
+
+int f1()
 {
     order[0] = getCount();
     return 4;
-}</p>
-<p>int f2()
+}
+
+int f2()
 {
     order[1] = getCount();
     return 55;
-}</p>
-<p>int f3()
+}
+
+int f3()
 {
     order[3] = getCount();
     return 67;
-}</p>
-<p>int main()
-{
-    func(gunc(f1(), f2()), f3());</p>
-<pre><code>/* Right to left */
-assert(order[3] == 1);
-assert(order[1] == 2);
-assert(order[0] == 3);
-assert(order[2] == 4);
-assert(order[4] == 5);
+}
 
-return 0;
+int main()
+{
+    func(gunc(f1(), f2()), f3());
+
+    /* Right to left */
+    assert(order[3] == 1);
+    assert(order[1] == 2);
+    assert(order[0] == 3);
+    assert(order[2] == 4);
+    assert(order[4] == 5);
+
+    return 0;
+}
 </code></pre>
-<p>}```</p>
 <p>Expected assertion: <code>right to left</code></p>
 <table>
 <thead>
