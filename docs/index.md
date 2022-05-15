@@ -17,7 +17,4 @@ during compilation as well.
 ## Sections
 
 There are several main sections that look at parts of the C specification which are unspecified.
-The main sections are listed below from wherein you can find more convoluted examples.
-
-1. [Functions]()
-2. [List initializers]()
+The main sections are listed in the navigation bar above.
