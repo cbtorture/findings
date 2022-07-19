@@ -604,3 +604,7 @@ Expected assertion: `result[0] == 2 && result[1] == 1`
 |CompCert| ['ccomp', '-O1', '-o', 'd0ffe543b7cfb1a5a2cbcc2779390d2d']| `result[0] == 2 && result[1] == 1` | ❌️| `d0ffe543b7cfb1a5a2cbcc2779390d2d` |
 |CompCert| ['ccomp', '-O2', '-o', 'dec6f2eab7998be0161f7c23b9444638']| `result[0] == 2 && result[1] == 1` | ❌️| `dec6f2eab7998be0161f7c23b9444638` |
 |CompCert| ['ccomp', '-O3', '-o', '96c334b1475a6d6ee71834eb57862ae8']| `result[0] == 2 && result[1] == 1` | ❌️| `96c334b1475a6d6ee71834eb57862ae8` |
+
+### Analysis
+
+No difference, all compilers and verifiers **ALWAYS** prefer left-to-right.
