@@ -7,11 +7,14 @@ nav:
             - Simple:
                 - F1: f1.md
                 - F2: f2.md
+                - F69: f69.md
         - Lists:
             - Introduction: lists.md
             - L1: l1.md
             - L2: l2.md
             - L3: l3.md
+        - Binary Operators:
+            - B1: binop.md
     - Specified (sanity):
         - Comma-operator:
             - Introduction: comma.md
